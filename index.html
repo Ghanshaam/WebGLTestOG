@@ -42,9 +42,9 @@
     <!-- BEGIN WEBGL FILE BROWSER LIB -->
     <style>
         #fb_popup_background.highlight {
-            border: 3px dashed #ccc;
-            border-radius: 26px;
-            border-color: aquamarine;
+            border: 0px dashed #cccccc00;
+            border-radius: 0px;
+            border-color: rgba(127, 255, 212, 0);
         }
         .disableSelection {
             -webkit-user-select: none;
@@ -57,36 +57,18 @@
     </style>
 
     <div id="fileBrowserPopup" style="display: none; margin: 0%; position: absolute; width: 100%; height: 100%; left: 0; top: 0; bottom: 0; right: 0;">
-        <img class="disableSelection" style="position: absolute; width: 100%; height: 100%; background-color: #000000; filter: opacity(0.7) blur(4px); " />
+        <img class="disableSelection" style="position: absolute; width: 100%; height: 100%; background-color: #000000; filter: opacity(0.0) blur(0px); " />
 
         <div id="fb_popup">
-            <img id="fb_popup_background" src="FileBrowser/popup_background.png" style="position: fixed; top: 0;  right: 0; bottom: 0; left: 0; margin: auto; width: 502.5px; height: 206px;" />
-            <div>
-                <img src="FileBrowser/popup_header.png" style="position: fixed; top: -146px;  right: 0; bottom: 0; left: 0; margin: auto; width: 502.5px; height: 60.5px;" />
-                <strong id="fb_popup_header_title" style="position: fixed; top: -110px;  right: -20px; bottom: 0; left: 0; margin: auto; width: 500px; height: 58px; color: white;">
-                    File Browser
-                </strong>
-            </div>
-            <div id="open_file_form">
-                <strong id="fb_popup_description_title" style="position: fixed; top: 0px;  right: 0px; bottom: 0; left: 0; margin: auto; width: 500px; height: 58px; text-align: center; color: white;">
-                    Select file to load
-                </strong>
+            <img id="fb_popup_background" src="FileBrowser/popup_background.png" style="position: fixed; top: 45%; right: 0; bottom: 0; left: 0; margin: auto; width: 30%; height: 40px;" />
 
                 <label for="fileToUpload">
-                    <img src="FileBrowser/select_button.png" style="position: fixed; top: 0px;  right: 250px; bottom: -80px; left: 0; margin: auto; width: 193.5px; height: 41px;" />
-                    <strong id="fb_popup_select_button_title" style="position: fixed; top: 0px;  right: 250px; bottom: -100px; left: 0; margin: auto; width: 193.5px; height: 41px; text-align: center; color: black;">
-                        Select
+                    <img src="FileBrowser/select_button.png" style="position: fixed; top: 45%; right: 0; bottom: 0; left: 0; margin: auto; width: 30%; height: 40px;" />
+                    <strong id="fb_popup_select_button_title" style="position: fixed; top: 45%; right: 0; bottom: 0; left: 0; text-align: center; text-size-adjust: auto; margin: auto; width: 30%; height: 20px; color: black;">
+                        Continue
                     </strong>
                 </label>
                 <input type="file" name="fileToUpload" id="fileToUpload" style="width: 0px; height: 0px;" onchange="fbLoadFiles(event.target.files);return false;" />
-
-                <label for="closePopup">
-                    <img src="FileBrowser/close_button.png" style="position: fixed; top: 0px;  right: -250px; bottom: -80px; left: 0; margin: auto; width: 193.5px; height: 41px;" />
-                    <strong id="fb_popup_close_button_title" style="position: fixed; top: 0px;  right: -245px; bottom: -100px; left: 0; margin: auto; width: 193.5px; height: 41px; text-align: center; color: black;">
-                        Close
-                    </strong>
-                </label>
-                <input type="button" name="closePopup" id="closePopup" style="width: 0px; height: 0px;" onclick="requestCloseFileBrowserForOpen()" />
             </div>
         </div>
     </div>
